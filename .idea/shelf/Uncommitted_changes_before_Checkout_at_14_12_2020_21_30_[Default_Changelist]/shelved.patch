@@ -1,0 +1,326 @@
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1607966188011)
++++ b/.idea/.gitignore	(date 1607966188011)
+@@ -0,0 +1,3 @@
++# Default ignored files
++/shelf/
++/workspace.xml
+Index: .idea/inspectionProfiles/profiles_settings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/profiles_settings.xml b/.idea/inspectionProfiles/profiles_settings.xml
+new file mode 100644
+--- /dev/null	(date 1607966187202)
++++ b/.idea/inspectionProfiles/profiles_settings.xml	(date 1607966187202)
+@@ -0,0 +1,6 @@
++<component name="InspectionProjectProfileManager">
++  <settings>
++    <option name="USE_PROJECT_PROFILE" value="false" />
++    <version value="1.0" />
++  </settings>
++</component>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1607966641646)
++++ b/.idea/misc.xml	(date 1607966641646)
+@@ -0,0 +1,4 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9 (geek_python)" project-jdk-type="Python SDK" />
++</project>
+\ No newline at end of file
+Index: lesson_1/les1_1.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lesson_1/les1_1.py b/lesson_1/les1_1.py
+new file mode 100644
+--- /dev/null	(date 1607959520062)
++++ b/lesson_1/les1_1.py	(date 1607959520062)
+@@ -0,0 +1,30 @@
++"""
++1. Поработайте с переменными, создайте несколько, выведите на экран,
++    запросите у пользователя несколько чисел и строк и сохраните
++    в переменные, выведите на экран
++"""
++
++variable1 = 1
++variable2 = 2
++
++print(variable1)
++print(variable2)
++
++user_name = input('Как вас зовут?\n>>> ')
++user_age = input('Сколько вам лет?\n>>> ')
++
++if user_age.isdigit() and int(user_age) != 0:
++    user_age = int(user_age)
++else:
++    print('Ошибка ввода.\nВведите ненулевое число.')
++    exit()
++
++age_ending = ''
++if user_age % 10 == 1 and user_age != 11:
++    age_ending = 'год.'
++elif 1 < user_age % 10 < 5:
++    age_ending = 'года'
++else:
++    age_ending = 'лет'
++
++print(f'Имя: {user_name}\nВозраст: {user_age} {age_ending}')
+Index: lesson_1/les1_2.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lesson_1/les1_2.py b/lesson_1/les1_2.py
+new file mode 100644
+--- /dev/null	(date 1607959520063)
++++ b/lesson_1/les1_2.py	(date 1607959520063)
+@@ -0,0 +1,20 @@
++"""
++2. Пользователь вводит время в секундах. Переведите время в часы,
++    минуты и секунды и выведите в формате чч:мм:сс.
++    Используйте форматирование строк.
++"""
++import datetime
++input_seconds = input('Время в секундах:\n>>> ')
++
++if input_seconds.isdigit():
++    input_seconds = int(input_seconds)
++else:
++    print('Введите числовое значение')
++    exit()
++
++hours = input_seconds // 3600
++minutes = input_seconds % 3600 // 60
++seconds = input_seconds % 3600 % 60
++
++print(f'{hours}:{minutes}:{seconds}')
++print(datetime.time(hours, minutes, seconds))
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1607966187152)
++++ b/.idea/vcs.xml	(date 1607966187152)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: lesson_1/les1_3.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lesson_1/les1_3.py b/lesson_1/les1_3.py
+new file mode 100644
+--- /dev/null	(date 1607959520064)
++++ b/lesson_1/les1_3.py	(date 1607959520064)
+@@ -0,0 +1,19 @@
++"""
++3. Узнайте у пользователя число n. Найдите сумму чисел n + nn + nnn.
++    Например, пользователь ввёл число 3. Считаем 3 + 33 + 333 = 369.
++"""
++
++user_number = input('Введите число n\n>>> ')
++
++if user_number.isdigit():
++    user_number_n = int(user_number)
++    user_number_nn = int(user_number * 2)
++    user_number_nnn = int(user_number * 3)
++
++    sum_nnn = user_number_n + user_number_nn + user_number_nnn
++
++    print(f'Сумма чисел {user_number_n} + {user_number_nn} + {user_number_nnn} = {sum_nnn}')
++
++else:
++    print('Введите числовое значение')
++    exit()
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1607966187136)
++++ b/.idea/modules.xml	(date 1607966187136)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/geek_python.iml" filepath="$PROJECT_DIR$/.idea/geek_python.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: lesson_1/les1_4.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lesson_1/les1_4.py b/lesson_1/les1_4.py
+new file mode 100644
+--- /dev/null	(date 1607959520064)
++++ b/lesson_1/les1_4.py	(date 1607959520064)
+@@ -0,0 +1,21 @@
++"""
++4. Пользователь вводит целое положительное число.
++    Найдите самую большую цифру в числе.
++    Для решения используйте цикл while и арифметические операции.
++"""
++number = 0
++user_number = input('Введите целое положительное число\n>>> ')
++
++if user_number.isdigit() and int(user_number) > 0:
++    number = int(user_number)
++else:
++    print('Неверный ввод\nВведите целое положительное число')
++    exit()
++
++max_number = 0
++while number != 0:
++    current_number = number % 10
++    number //= 10
++    if max_number < current_number:
++        max_number = current_number
++print(f'Самая большая цифра в числе {user_number} это {max_number}')
+Index: .idea/geek_python.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/geek_python.iml b/.idea/geek_python.iml
+new file mode 100644
+--- /dev/null	(date 1607966641629)
++++ b/.idea/geek_python.iml	(date 1607966641629)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="PYTHON_MODULE" version="4">
++  <component name="NewModuleRootManager">
++    <content url="file://$MODULE_DIR$">
++      <excludeFolder url="file://$MODULE_DIR$/venv" />
++    </content>
++    <orderEntry type="jdk" jdkName="Python 3.9 (geek_python)" jdkType="Python SDK" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: lesson_1/les1_5.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lesson_1/les1_5.py b/lesson_1/les1_5.py
+new file mode 100644
+--- /dev/null	(date 1607959520102)
++++ b/lesson_1/les1_5.py	(date 1607959520102)
+@@ -0,0 +1,43 @@
++"""
++5. Запросите у пользователя значения выручки и издержек фирмы.
++    Определите, с каким финансовым результатом работает фирма
++    (прибыль — выручка больше издержек, или убыток — издержки больше выручки).
++    Выведите соответствующее сообщение. Если фирма отработала с прибылью,
++    вычислите рентабельность выручки (соотношение прибыли к выручке).
++    Далее запросите численность сотрудников фирмы и определите прибыль
++    фирмы в расчете на одного сотрудника.
++"""
++
++
++def input_check(user_input):
++    if user_input.isdigit():
++        user_input = int(user_input)
++        return user_input
++    else:
++        print('Ошибка. Введите числовое значение')
++        exit()
++
++
++revenue = input('Выручка фирмы\n>>> ')
++costs = input('Издержки фирмы\n>>> ')
++
++revenue = input_check(revenue)
++costs = input_check(costs)
++
++profit = 0
++rentability = 0
++if revenue > costs:
++    profit = revenue - costs
++    rentability = revenue / costs
++    print(f'Фирма отработала с прибылью: {profit}\nРентабельность: {rentability:.1f}')
++elif revenue < costs:
++    profit = costs - revenue
++    print(f'Фирма отработала с убытком в {profit}')
++else:
++    print('Фирма работает в 0')
++
++workers_count = input('Введите колличество сотрудников\n>>> ')
++workers_count = input_check(workers_count)
++
++worker_profit = profit / workers_count
++print(f'Прибыль фирмы в расчете на одного сотрудника равна: {worker_profit:.1f}')
+Index: lesson_1/les1_6.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lesson_1/les1_6.py b/lesson_1/les1_6.py
+new file mode 100644
+--- /dev/null	(date 1607959520102)
++++ b/lesson_1/les1_6.py	(date 1607959520102)
+@@ -0,0 +1,31 @@
++"""
++6. Спортсмен занимается ежедневными пробежками. В первый день его результат
++    составил a километров. Каждый день спортсмен увеличивал результат на 10 %
++    относительно предыдущего. Требуется определить номер дня, на который общий
++    результат спортсмена составит не менее b километров. Программа должна принимать
++    значения параметров a и b и выводить одно натуральное число — номер дня
++"""
++
++
++def input_check(user_input):
++    if user_input.isdigit():
++        user_input = int(user_input)
++        return user_input
++    else:
++        print('Ошибка. Введите числовое значение')
++        exit()
++
++
++a = input('Результат в первый день\n>>> ')
++b = input('Желаемый результат\n>>> ')
++
++a = input_check(a)
++b = input_check(b)
++
++current_value = a
++days = 0
++while current_value < b:
++    current_value = current_value + current_value * 0.1
++    days += 1
++
++print(f'Желаемый результат будет достигнут на {days} день')
