@@ -21,3 +21,36 @@
 “ед”: [“шт.”]
 }
 """
+name = []
+price = []
+quantity = []
+vol = []
+
+analysis = {
+        'Название': name,
+        'Цена': price,
+        'Количество': quantity,
+        'ед': vol,
+    }
+
+goods = int(input('Введите колличество товаров:\n>>> '))
+goods_list = []
+i = 1
+while i <= goods:
+    goods_value = {
+        'Название': input('Введите название товара:\n>>> '),
+        'Цена': input('Введите цену товара:\n>>> '),
+        'Количество': input('Введите количество товара:\n>>> '),
+        'ед': input('Введите единицу счёта:\n>>> ')
+    }
+    goods_list.append((i, goods_value))
+    i += 1
+
+    # Формирование словаря анализа по параметрам
+    name.append(goods_value.get('Название'))
+    price.append(goods_value.get('Цена'))
+    quantity.append(goods_value.get('Количество'))
+    vol.append(goods_value.get('ед'))
+
+print(goods_list)
+print(analysis)
