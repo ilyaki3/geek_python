@@ -11,3 +11,13 @@
 Пользователь ввел число 1. Результат: 7, 5, 3, 3, 2, 1.
 Набор натуральных чисел можно задать непосредственно в коде, например, my_list = [7, 5, 3, 3, 2].
 """
+
+my_list = [7, 5, 3, 3, 2]
+while True:
+    new_element = int(input('\nДля выхода из программы введите "666"\nВведите новый элемент:\n>>> '))
+    if new_element == 666:
+        break
+    else:
+        my_list.append(new_element)
+        my_list.sort(reverse=True)
+        print(f'Результат: {my_list}')
