@@ -4,3 +4,12 @@
 При нечетном количестве элементов последний сохранить на своем месте.
 Для заполнения списка элементов необходимо использовать функцию input().
 """
+
+values_str = input('Заполните список значений через пробел:\n>>> ')
+some_list = list(values_str.split())
+
+i = 0
+for item in range(int(len(some_list)/2)):
+    some_list[i], some_list[i+1] = some_list[i+1], some_list[i]
+    i += 2
+print(some_list)
