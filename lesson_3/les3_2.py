@@ -7,15 +7,9 @@
 """
 
 
-def data(name, surname, years, city, e_mail, telephone):
-    print('|'.join([name, surname, years, city, e_mail, telephone]))
+def data(name: str, surname: str, years: int, city: str, e_mail: str, telephone: str):
+    print(name, surname, years, city, e_mail, telephone)
 
 
-name = input('Имя -> ')
-surname = input('Фамилия -> ')
-years = input('Возраст -> ')
-city = input('Город -> ')
-e_mail = input('e-mail -> ')
-telephone = input('Номер телефона -> ')
-
-data(name, surname, years, city, e_mail, telephone)
+data(name='Илья', surname='Киреев', years=25, city='Москва',
+     e_mail='aliwe2@yandex.ru', telephone='8-800-555-35-35')
