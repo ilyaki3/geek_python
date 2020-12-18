@@ -8,3 +8,10 @@
 строки, но каждое слово должно начинаться с заглавной буквы.
 Необходимо использовать написанную ранее функцию int_func().
 """
+
+
+def int_func(words):
+    return words.title()
+
+
+print(int_func('geek brains'))
