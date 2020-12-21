@@ -19,13 +19,13 @@ def my_func(x: float, y: int) -> float:
     :param y: int Целое отрицательное число y
     :return: float
     """
-    # return x ** abs(y)
+    # return 1/(x ** abs(y))
 
     i = 1
     while i < abs(y):
         x *= x
         i += 1
-    return x
+    return 1/x
 
 
 print(my_func(10, -2))
