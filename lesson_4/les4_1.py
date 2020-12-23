@@ -7,10 +7,11 @@
 
 from sys import argv
 
-hours = int(argv[1])
-pay = int(argv[2])
-bonus = int(argv[3])
-
-salary = hours * pay + bonus
-print(salary)
-
+try:
+    hours = int(argv[1])
+    pay = int(argv[2])
+    bonus = int(argv[3])
+    salary = hours * pay + bonus
+    print(salary)
+except ValueError:
+    print('Ошибка ввода')
